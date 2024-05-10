@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>0.1.0</Version>
+    <ApplicationIcon>topaz_lab.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="topaz_lab.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cybercraft.Common\Cybercraft.Common.Core\Cybercraft.Common.Core.csproj" />
+    <ProjectReference Include="..\..\Cybercraft.Common\Cybercraft.Common.WinForms.Core\Cybercraft.Common.WinForms.Core.csproj" />
+    <ProjectReference Include="..\..\VideoProcessingLib\VideoProcessingLib.AviSynth\VideoProcessingLib.AviSynth.csproj" />
+    <ProjectReference Include="..\..\VideoProcessingLib\VideoProcessingLib.VirtualDub\VideoProcessingLib.VirtualDub.csproj" />
+    <ProjectReference Include="..\TopazVideoLab.Project\TopazVideoLab.Project.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="PreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProjectPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
