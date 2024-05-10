@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Cybercraft.Common\ArgumentParser.cs" Link="ArgumentParser.cs" />
+    <Compile Include="..\Cybercraft.Common\Concurrency\Concurrent.cs" Link="Concurrency\Concurrent.cs" />
+    <Compile Include="..\Cybercraft.Common\Configuration.cs" Link="Configuration.cs" />
+    <Compile Include="..\Cybercraft.Common\Enumerable.cs" Link="Enumerable.cs" />
+    <Compile Include="..\Cybercraft.Common\Exception.cs" Link="Exception.cs" />
+    <Compile Include="..\Cybercraft.Common\File.cs" Link="File.cs" />
+    <Compile Include="..\Cybercraft.Common\Fraction.cs" Link="Fraction.cs" />
+    <Compile Include="..\Cybercraft.Common\Hash\Crc32.cs" Link="Hash\Crc32.cs" />
+    <Compile Include="..\Cybercraft.Common\Hash\Oso.cs" Link="Hash\Oso.cs" />
+    <Compile Include="..\Cybercraft.Common\Http.cs" Link="Http.cs" />
+    <Compile Include="..\Cybercraft.Common\Information\System.cs" Link="Information\System.cs" />
+    <Compile Include="..\Cybercraft.Common\MiniDump.cs" Link="MiniDump.cs" />
+    <Compile Include="..\Cybercraft.Common\Process.cs" Link="Process.cs" />
+    <Compile Include="..\Cybercraft.Common\SafeBase.cs" Link="SafeBase.cs" />
+    <Compile Include="..\Cybercraft.Common\SafeDirectory.cs" Link="SafeDirectory.cs" />
+    <Compile Include="..\Cybercraft.Common\SafeFile.cs" Link="SafeFile.cs" />
+    <Compile Include="..\Cybercraft.Common\ToolConfigurationElement.cs" Link="ToolConfigurationElement.cs" />
+    <Compile Include="..\Cybercraft.Common\Version.cs" Link="Version.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Concurrency\" />
+    <Folder Include="Hash\" />
+    <Folder Include="Information\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pri.LongPath.Core\Pri.LongPath.Core.csproj" />
+  </ItemGroup>
+
+</Project>
