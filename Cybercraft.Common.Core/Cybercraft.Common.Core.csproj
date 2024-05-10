@@ -47,7 +47,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Pri.LongPath.Core\Pri.LongPath.Core.csproj" />
+    <ProjectReference Include="..\Pri.LongPath.Core\Pri.LongPath.Core.csproj" />
   </ItemGroup>
 
 </Project>

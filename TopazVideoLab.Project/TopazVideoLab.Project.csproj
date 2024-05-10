@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\VideoProcessingLib\VideoProcessingLib.AviSynth\VideoProcessingLib.AviSynth.csproj" />
+    <ProjectReference Include="..\VideoProcessingLib.AviSynth\VideoProcessingLib.AviSynth.csproj" />
   </ItemGroup>
 
 </Project>

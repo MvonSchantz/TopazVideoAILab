@@ -22,11 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Cybercraft.Common\Cybercraft.Common.Core\Cybercraft.Common.Core.csproj" />
-    <ProjectReference Include="..\..\Cybercraft.Common\Cybercraft.Common.WinForms.Core\Cybercraft.Common.WinForms.Core.csproj" />
-    <ProjectReference Include="..\..\VideoProcessingLib\VideoProcessingLib.AviSynth\VideoProcessingLib.AviSynth.csproj" />
-    <ProjectReference Include="..\..\VideoProcessingLib\VideoProcessingLib.VirtualDub\VideoProcessingLib.VirtualDub.csproj" />
+    <ProjectReference Include="..\Cybercraft.Common.Core\Cybercraft.Common.Core.csproj" />
+    <ProjectReference Include="..\Cybercraft.Common.WinForms.Core\Cybercraft.Common.WinForms.Core.csproj" />
     <ProjectReference Include="..\TopazVideoLab.Project\TopazVideoLab.Project.csproj" />
+    <ProjectReference Include="..\VideoProcessingLib.AviSynth\VideoProcessingLib.AviSynth.csproj" />
+    <ProjectReference Include="..\VideoProcessingLib.VirtualDub\VideoProcessingLib.VirtualDub.csproj" />
   </ItemGroup>
 
   <ItemGroup>
