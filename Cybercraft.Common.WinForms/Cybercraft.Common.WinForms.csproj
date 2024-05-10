@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCA3F40B-B57E-4145-85FB-61B6811245C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cybercraft.Common.WinForms</RootNamespace>
+    <AssemblyName>Cybercraft.Common.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BufferedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColorGradient.cs" />
+    <Compile Include="Gdi32.cs" />
+    <Compile Include="Gdi\BITMAPINFO.cs" />
+    <Compile Include="Gdi\GdiBitmap.cs" />
+    <Compile Include="Gdi\GdiBrush.cs" />
+    <Compile Include="Gdi\AA\GdiDcAA.cs" />
+    <Compile Include="Gdi\GdiDc.cs" />
+    <Compile Include="Gdi\GdiFont.cs" />
+    <Compile Include="Gdi\GdiRegion.cs" />
+    <Compile Include="Gdi\GdiPen.cs" />
+    <Compile Include="Gdi\POINT.cs" />
+    <Compile Include="Gdi\RECT.cs" />
+    <Compile Include="PaintPanel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Range.cs" />
+    <Compile Include="RecentlyUsedFiles.cs" />
+    <Compile Include="Resources.cs" />
+    <Compile Include="Rgb.cs" />
+    <Compile Include="Size.cs" />
+    <Compile Include="SplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\DropDownList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\GroupPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\NumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\ReadOnlyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\Style.cs" />
+    <Compile Include="Style\TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Style\TrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Uv.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\scrollbar_arrow_hot.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
