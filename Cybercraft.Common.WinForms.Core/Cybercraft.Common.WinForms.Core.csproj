@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Cybercraft.Common.WinForms\BufferedListBox.cs" Link="BufferedListBox.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\ColorGradient.cs" Link="ColorGradient.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi32.cs" Link="Gdi32.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\AA\GdiDcAA.cs" Link="Gdi\AA\GdiDcAA.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\BITMAPINFO.cs" Link="Gdi\BITMAPINFO.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\GdiBitmap.cs" Link="Gdi\GdiBitmap.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\GdiBrush.cs" Link="Gdi\GdiBrush.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\GdiDc.cs" Link="Gdi\GdiDc.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\GdiFont.cs" Link="Gdi\GdiFont.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\GdiPen.cs" Link="Gdi\GdiPen.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\GdiRegion.cs" Link="Gdi\GdiRegion.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\POINT.cs" Link="Gdi\POINT.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Gdi\RECT.cs" Link="Gdi\RECT.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\PaintPanel.cs" Link="PaintPanel.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Range.cs" Link="Range.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\RecentlyUsedFiles.cs" Link="RecentlyUsedFiles.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Resources.cs" Link="Resources.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Rgb.cs" Link="Rgb.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Size.cs" Link="Size.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\SplitButton.cs" Link="SplitButton.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\Button.cs" Link="Style\Button.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\CheckBox.cs" Link="Style\CheckBox.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\DropDownList.cs" Link="Style\DropDownList.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\GroupBox.cs" Link="Style\GroupBox.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\GroupPanel.cs" Link="Style\GroupPanel.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\Label.cs" Link="Style\Label.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\NumericUpDown.cs" Link="Style\NumericUpDown.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\Panel.cs" Link="Style\Panel.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\RadioButton.cs" Link="Style\RadioButton.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\ReadOnlyTextBox.cs" Link="Style\ReadOnlyTextBox.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\Style.cs" Link="Style\Style.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\TextBox.cs" Link="Style\TextBox.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Style\TrackBar.cs" Link="Style\TrackBar.cs" />
+    <Compile Include="..\Cybercraft.Common.WinForms\Uv.cs" Link="Uv.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Cybercraft.Common.WinForms\Icons\scrollbar_arrow_hot.png" Link="Icons\scrollbar_arrow_hot.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Gdi\AA\" />
+    <Folder Include="Icons\" />
+  </ItemGroup>
+
+</Project>
