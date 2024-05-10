@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by Mattias von Schantz (.) -->
+<xs:schema
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	>
+
+	<xs:element name="TopazVideoLabProject">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SourceVideo" type="SourceVideoType"/>
+				<xs:element name="Combination" type="CombinationType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="OutputSize" type="OutputSizeType"/>
+				<xs:element name="Preview" type="PreviewType"/>
+			</xs:sequence>
+			<xs:attribute name="majorVersion" type="xs:int" use="required"/>
+			<xs:attribute name="minorVersion" type="xs:int" use="required"/>
+			<xs:attribute name="build" type="xs:int" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="UpscaleAlgorithm">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="GaiaHq"/>
+			<xs:enumeration value="GaiaCg"/>
+			<xs:enumeration value="Dione"/>
+			<xs:enumeration value="Proteus"/>
+			<xs:enumeration value="Proteus4"/>
+			<xs:enumeration value="Iris"/>
+			<xs:enumeration value="IrisMq"/>
+			<xs:enumeration value="IrisLq3"/>
+			<xs:enumeration value="ArtemisHq"/>
+			<xs:enumeration value="ArtemisMq"/>
+			<xs:enumeration value="ArtemisLq"/>
+			<xs:enumeration value="Themis2"/>
+			<xs:enumeration value="Nyx2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResizeAlgorithm">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="Spline64"/>
+			<xs:enumeration value="Lanczos"/>
+			<xs:enumeration value="Bicubic"/>
+			<xs:enumeration value="Bilinear"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AspectRatio">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ratio4by3"/>
+			<xs:enumeration value="Ratio16by9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ColorSpace">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Rec601"/>
+			<xs:enumeration value="Rec709"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Interlace">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Progressive"/>
+			<xs:enumeration value="IVTC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResizePreset">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="InputSize"/>
+			<xs:enumeration value="SourceSize"/>
+			<xs:enumeration value="AspectCorrectedSourceSizeUpward"/>
+			<xs:enumeration value="AspectCorrectedSourceSizeDownward"/>
+			<xs:enumeration value="FixedSize"/>
+			<xs:enumeration value="FinalSize"/>
+			<xs:enumeration value="TwoThirdsFinalSize"/>
+			<xs:enumeration value="HalfFinalSize"/>
+			<xs:enumeration value="QuarterFinalSize"/>
+			<xs:enumeration value="TwoThirdsFinalSizeLimitBySource"/>
+			<xs:enumeration value="HalfFinalSizeLimitBySource"/>
+			<xs:enumeration value="QuarterFinalSizeLimitBySource"/>
+			<xs:enumeration value="TwoThirdsInputSize"/>
+			<xs:enumeration value="HalfInputSize"/>
+			<xs:enumeration value="QuarterInputSize"/>
+			<xs:enumeration value="AspectCorrectedInputSizeUpward"/>
+			<xs:enumeration value="AspectCorrectedInputSizeDownward"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NoisePreset">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="QtgmcPlacebo"/>
+			<xs:enumeration value="QtgmcVerySlow"/>
+			<xs:enumeration value="QtgmcSlower"/>
+			<xs:enumeration value="QtgmcSlow"/>
+			<xs:enumeration value="QtgmcMedium"/>
+			<xs:enumeration value="QtgmcFast"/>
+			<xs:enumeration value="QtgmcFaster"/>
+			<xs:enumeration value="QtgmcVeryFast"/>
+			<xs:enumeration value="QtgmcSuperFast"/>
+			<xs:enumeration value="QtgmcUltraFast"/>
+			<xs:enumeration value="QtgmcDraft"/>
+			<xs:enumeration value="FilmGrain005"/>
+			<xs:enumeration value="FilmGrain010"/>
+			<xs:enumeration value="FilmGrain015"/>
+			<xs:enumeration value="FilmGrain020"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="UpscaleType">
+		<xs:attribute name="algorithm" type="UpscaleAlgorithm" use="required"/>
+		<xs:attribute name="factor" type="xs:int" use="required"/>
+		<xs:attribute name="auto" type="xs:boolean" use="optional"/>
+		<xs:attribute name="revertCompression" type="xs:int" use="optional"/>
+		<xs:attribute name="recoverDetails" type="xs:int" use="optional"/>
+		<xs:attribute name="sharpen" type="xs:int" use="optional"/>
+		<xs:attribute name="reduceNoise" type="xs:int" use="optional"/>
+		<xs:attribute name="dehalo" type="xs:int" use="optional"/>
+		<xs:attribute name="antiAliasDeblur" type="xs:int" use="optional"/>
+		<xs:attribute name="blend" type="xs:int" use="optional"/>
+		<xs:attribute name="offsetX" type ="xs:int" use="optional"/>
+		<xs:attribute name="offsetY" type ="xs:int" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="ResizeType">
+		<xs:attribute name="width" type="xs:int" use="required"/>
+		<xs:attribute name="height" type="xs:int" use="required"/>
+		<xs:attribute name="algorithm" type="ResizeAlgorithm" use="required"/>
+		<xs:attribute name="preset" type="ResizePreset" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="OutputSizeType">
+		<xs:attribute name="width" type="xs:int" use="required"/>
+		<xs:attribute name="height" type="xs:int" use="required"/>
+		<xs:attribute name="ratio" type="AspectRatio" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="SourceType">
+		<xs:attribute name="id" type="xs:IDREF" use="required"/>
+		<xs:attribute name="weight" type="xs:float" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CombinationType">
+		<xs:sequence>
+			<xs:element name="Source" type="SourceType" maxOccurs="unbounded"/>
+			<xs:element name="Resize" type="ResizeType" minOccurs="0"/>
+			<xs:element name="Noise" type="xs:float" minOccurs="0"/>
+			<xs:element name="NoisePreset" type="NoisePreset" minOccurs="0"/>
+			<xs:element name="Upscale" type="UpscaleType"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+		<xs:attribute name="left" type="xs:int" use="required"/>
+		<xs:attribute name="top" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="SourceVideoType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:ID" use="required"/>
+				<xs:attribute name="left" type="xs:int" use="required"/>
+				<xs:attribute name="top" type="xs:int" use="required"/>
+				<xs:attribute name="colorSpace" type="ColorSpace" use="required"/>
+				<xs:attribute name="interlace" type="Interlace" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="PreviewType">
+		<xs:attribute name="frame" type="xs:int" use="required"/>
+		<xs:attribute name="length" type="xs:int" use="required"/>
+	</xs:complexType>
+</xs:schema>
