@@ -6,6 +6,7 @@ using TopazVideoLab.Project;
 using TopazVideoLab2.Models;
 using VideoProcessingLib.AviSynth;
 using static System.Net.Mime.MediaTypeNames;
+using Size = VideoProcessingLib.AviSynth.Size;
 
 namespace TopazVideoLab2
 {
@@ -43,6 +44,8 @@ namespace TopazVideoLab2
 
         public bool IsSelected { get; set; }
 
+        public bool IsClone { get; set; }
+
         public List<GraphNodeInput> Inputs { get; } = new List<GraphNodeInput>();
 
         ISource[] ICombination.Sources => Inputs.Cast<ISource>().ToArray();
@@ -74,6 +77,7 @@ namespace TopazVideoLab2
         public int RecoverOriginalDetails { get; set; } = 20;
 
         public bool Auto { get; set; } = false;
+
 
         public string Name
         {
@@ -184,6 +188,36 @@ namespace TopazVideoLab2
 
         public GraphNode(MainForm mainForm, int left, int top, bool isSource) : base(mainForm, isSource ? BoxWidth * 2 : BoxWidth, BoxHeight, left, top)
         {
+        }
+
+        public GraphNode(GraphNode sourceNode) : base(sourceNode.MainForm, sourceNode.Width, sourceNode.Height, sourceNode.Left, sourceNode.Top)
+        {
+            IsHighlighted = sourceNode.IsHighlighted;
+            IsSelected = sourceNode.IsSelected;
+            IsClone = true;
+            foreach (var sourceNodeInput in sourceNode.Inputs)
+            {
+                var input = new GraphNodeInput(sourceNodeInput.Source, this);
+                Inputs.Add(input);
+            }
+            IsSource = sourceNode.IsSource;
+            UpscaleAlgorithm = sourceNode.UpscaleAlgorithm;
+            UpscaleFactor = sourceNode.UpscaleFactor;
+            Resize = new Size(sourceNode.Resize);
+            ResizeAlgorithm = sourceNode.ResizeAlgorithm;
+            ResizePreset = sourceNode.ResizePreset;
+            Noise = sourceNode.Noise;
+            NoisePreset = sourceNode.NoisePreset;
+            RevertCompression = sourceNode.RevertCompression;
+            RecoverDetails = sourceNode.RecoverDetails;
+            Sharpen = sourceNode.Sharpen;
+            ReduceNoise = sourceNode.ReduceNoise;
+            Dehalo = sourceNode.Dehalo;
+            AntiAliasDeblur = sourceNode.AntiAliasDeblur;
+            OffsetX = sourceNode.OffsetX;
+            OffsetY = sourceNode.OffsetY;
+            RecoverOriginalDetails = sourceNode.RecoverOriginalDetails;
+            Auto = sourceNode.Auto;
         }
 
         ISource ICombination.AddSource()

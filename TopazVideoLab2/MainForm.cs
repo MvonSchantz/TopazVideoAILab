@@ -892,6 +892,8 @@ namespace TopazVideoLab2
                 {
                     GraphNodes.Remove(node);
                     GraphNodes.Add(node);
+
+                    node.IsClone = false;
                 }
                 else if (DragArrow != null)
                 {
@@ -973,8 +975,18 @@ namespace TopazVideoLab2
 
                         if (MouseComponent is GraphNode node)
                         {
-                            GraphNodes.Remove(node);
-                            GraphNodes.Add(node);
+                            if (!IsCtrlPressed && IsShiftPressed && !node.IsClone && !node.IsSource)
+                            {
+                                var cloneNode = new GraphNode(node);
+                                node.IsSelected = false;
+                                MouseComponent = cloneNode;
+                                GraphNodes.Add(cloneNode);
+                            }
+                            else
+                            {
+                                GraphNodes.Remove(node);
+                                GraphNodes.Add(node);
+                            }
                         }
                     }
 
@@ -993,6 +1005,8 @@ namespace TopazVideoLab2
         }
 
         private bool IsCtrlPressed => ModifierKeys.HasFlag(Keys.Control);
+
+        private bool IsShiftPressed => ModifierKeys.HasFlag(Keys.Shift);
 
         private void GraphPaintPanel_KeyUp(object sender, KeyEventArgs e)
         {
